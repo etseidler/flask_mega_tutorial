@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-10-03 14:42-0500\n"
+"POT-Creation-Date: 2019-10-07 12:59-0500\n"
 "PO-Revision-Date: 2019-10-01 10:21-0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
@@ -71,6 +71,7 @@ msgid "About me"
 msgstr "私について"
 
 #: app/forms.py:51 app/forms.py:66 app/main/forms.py:12 app/main/forms.py:27
+#: app/main/forms.py:45
 msgid "Submit"
 msgstr "提出する"
 
@@ -94,34 +95,34 @@ msgstr "ユーザー名かパスワードが無効"
 msgid "Congratulations, you are now a registered user!"
 msgstr "おめでとうございます、これで登録ユーザーになりました！"
 
-#: app/main/routes.py:111 app/routes.py:121
+#: app/main/routes.py:118 app/routes.py:121
 msgid "Your changes have been saved."
 msgstr "変更内容が保存されました。"
 
-#: app/main/routes.py:116 app/routes.py:126 app/templates/edit_profile.html:5
+#: app/main/routes.py:123 app/routes.py:126 app/templates/edit_profile.html:5
 msgid "Edit Profile"
 msgstr "プロファイル編集"
 
-#: app/main/routes.py:124 app/main/routes.py:140 app/routes.py:134
+#: app/main/routes.py:131 app/main/routes.py:147 app/routes.py:134
 #: app/routes.py:150
 #, python-format
 msgid "User %(username)s not found."
 msgstr "ユーザー %(username)s 見つかりません。"
 
-#: app/main/routes.py:127 app/routes.py:137
+#: app/main/routes.py:134 app/routes.py:137
 msgid "You cannot follow yourself!"
 msgstr "自分をフォローすることはできません！"
 
-#: app/main/routes.py:131 app/routes.py:141
+#: app/main/routes.py:138 app/routes.py:141
 #, python-format
 msgid "You are following %(username)s!"
 msgstr "フォローしています %(username)s!"
 
-#: app/main/routes.py:143 app/routes.py:153
+#: app/main/routes.py:150 app/routes.py:153
 msgid "You cannot unfollow yourself!"
 msgstr "自分のフォローを解除することはできません！"
 
-#: app/main/routes.py:147 app/routes.py:157
+#: app/main/routes.py:154 app/routes.py:157
 #, python-format
 msgid "You are not following %(username)s."
 msgstr "フォローしていません %(username)s。"
@@ -155,16 +156,28 @@ msgstr "エラー：翻訳サービスが失敗しました。"
 msgid "[Microblog] Reset Your Password"
 msgstr "[Microblog] あなたのパスワードをリセット"
 
-#: app/main/forms.py:31 app/main/routes.py:186
+#: app/main/forms.py:31 app/main/routes.py:193
 msgid "Search"
 msgstr "調べる"
 
-#: app/templates/_post.html:14
+#: app/main/forms.py:43
+msgid "Message"
+msgstr "メッセージ"
+
+#: app/main/routes.py:209
+msgid "Your message has been sent."
+msgstr "メッセージが送信されました。"
+
+#: app/main/routes.py:212
+msgid "Send Message"
+msgstr "メッセージを送る"
+
+#: app/templates/_post.html:16
 #, python-format
 msgid "%(username)s said %(when)s"
 msgstr "%(username)s 前記 %(when)s"
 
-#: app/templates/_post.html:25
+#: app/templates/_post.html:27
 msgid "Translate"
 msgstr "翻訳する"
 
@@ -176,15 +189,19 @@ msgstr "Microblog へようこそ"
 msgid "Login"
 msgstr "ログインする"
 
-#: app/templates/base.html:37
+#: app/templates/base.html:37 app/templates/messages.html:4
+msgid "Messages"
+msgstr "メッセージ"
+
+#: app/templates/base.html:38
 msgid "Profile"
 msgstr "プロフィール"
 
-#: app/templates/base.html:38
+#: app/templates/base.html:39
 msgid "Logout"
 msgstr "ログアウト"
 
-#: app/templates/base.html:75
+#: app/templates/base.html:76
 msgid "Error: Could not contact server."
 msgstr "エラー：サーバーに接続できませんでした。"
 
@@ -193,13 +210,21 @@ msgstr "エラー：サーバーに接続できませんでした。"
 msgid "Hi, %(username)s!"
 msgstr "こんにちは %(username)s!"
 
-#: app/templates/index.html:17 app/templates/user.html:32
+#: app/templates/index.html:17 app/templates/user.html:40
 msgid "Newer posts"
 msgstr "より新しいポスト"
 
-#: app/templates/index.html:22 app/templates/user.html:37
+#: app/templates/index.html:22 app/templates/user.html:45
 msgid "Older posts"
 msgstr "古い投稿"
+
+#: app/templates/messages.html:12
+msgid "Newer messages"
+msgstr "新しいメッセージ"
+
+#: app/templates/messages.html:17
+msgid "Older messages"
+msgstr "古いメッセージ"
 
 #: app/templates/search.html:4
 msgid "Search Results"
@@ -213,20 +238,25 @@ msgstr "前の結果"
 msgid "Next results"
 msgstr "次の結果"
 
+#: app/templates/send_message.html:5
+#, python-format
+msgid "Send Message to %(recipient)s"
+msgstr "にメッセージを送信 %(recipient)s"
+
 #: app/templates/user.html:8
 msgid "User"
 msgstr "ユーザー"
 
-#: app/templates/user.html:11
+#: app/templates/user.html:11 app/templates/user_popup.html:13
 msgid "Last seen on"
 msgstr "最後に見た"
 
-#: app/templates/user.html:13
+#: app/templates/user.html:13 app/templates/user_popup.html:16
 #, python-format
 msgid "%(count)d followers"
 msgstr "%(count)d フォロワー"
 
-#: app/templates/user.html:14
+#: app/templates/user.html:14 app/templates/user_popup.html:17
 #, python-format
 msgid "%(count)d following"
 msgstr "%(count)d 以下"
@@ -235,13 +265,17 @@ msgstr "%(count)d 以下"
 msgid "Edit your profile"
 msgstr "プロフィールを編集する"
 
-#: app/templates/user.html:18
+#: app/templates/user.html:18 app/templates/user_popup.html:21
 msgid "Follow"
 msgstr "フォロー"
 
-#: app/templates/user.html:20
+#: app/templates/user.html:20 app/templates/user_popup.html:25
 msgid "Unfollow"
 msgstr "フォロー解除"
+
+#: app/templates/user.html:26
+msgid "Send private message"
+msgstr "プライベートメッセージを送る"
 
 #: app/templates/auth/404.html:4
 msgid "Not Found"
